@@ -2,8 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const ms = require('ms');
 
-const token = 'ODI3NjcwNTUwMTE3NjEzNTg4.YGeaRA.53qNEeIZbmjXjegx-RmS5WKu-0c';
-
 const PREFIX = '-';
 
 const fs = require('fs');
@@ -172,4 +170,4 @@ client.on('message', message => {
     }
 });
 
-client.login(token)
+client.login(process.env.token);
