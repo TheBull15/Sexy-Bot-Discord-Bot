@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const ms = require('ms');
 
-const token = 'ODI3NjcwNTUwMTE3NjEzNTg4.YGeaRA.53qNEeIZbmjXjegx-RmS5WKu-0c';
+const token = 'ODI3NjcwNTUwMTE3NjEzNTg4.YGeaRA.fV41pyMo8cF-bLeGiy8IRMjw8A0';
 
 const PREFIX = '-';
 
@@ -14,7 +14,7 @@ const ServerLink = ('https://discord.gg/f93bsZxqY3')
 
 var servers = '2'
 
-var roles = '50'
+var roles = '49'
 
 client.commands = new Discord.Collection();
 
