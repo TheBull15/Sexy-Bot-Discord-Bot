@@ -166,6 +166,20 @@ client.on('message', message => {
                 message.channel.send("You can't use this command!")
             }
             break;
+        case 'fact':
+            if (message.member.roles.cache.has('798965111687217192')) {
+                rndmessage(message);
+
+                function rndmessage(message) {
+                    var messages = ['Fun Fact: McDonald’s once made bubblegum-flavored broccoli.', 'Fun Fact: The first oranges weren’t orange.', 'Fun Fact: There’s only one letter that doesn’t appear in any U.S. state name.', 'Fun Fact: A cow-bison hybrid is called a “beefalo”.', 'Fun Fact: Scotland has 421 words for “snow”.', 'You are sexy!', 'Fun Fact: Samsung tests phone durability with a butt-shaped robot.', 'Fun Fact: Peanuts aren’t technically nuts.', 'Fun Fact: Armadillo shells are bulletproof.', 'Fun Fact: Firefighters use wetting agents to make water wetter.', 'Fun Fact: The longest English word is 189,819 letters long.', 'Fun Fact: Octopuses lay 56,000 eggs at a time.', 'Fun Fact: Kleenex tissues were originally intended for gas masks.', 'Fun Fact: Blue whales eat half a million calories in one mouthful.', 'Fun Fact: That tiny pocket in jeans was designed to store pocket watches.', 'Fun Fact: Most Disney characters wear gloves to keep animation simple.', 'Fun Fact: The man with the world’s deepest voice can make sounds humans can’t hear.', 'Fun Fact: Thanks to 3D printing, NASA can basically “email” tools to astronauts.', 'Fun Fact: Only a quarter of the Sahara Desert is sandy.', 'Fun Fact: Bananas grow upside-down.', 'Fun Fact: There were active volcanoes on the moon when dinosaurs were alive.', 'Fun Fact: You only have two body parts that never stop growing.', 'Fun Fact: No number before 1,000 contains the letter A.', 'Fun Fact: The # symbol isn’t officially called hashtag or pound.', 'Fun Fact: You can thank the Greeks for calling Christmas “Xmas”.', 'Fun Fact: Movie trailers originally played after the movie.', 'Fun Fact: Cap’n Crunch’s full name is Horatio Magellan Crunch.', 'Fun Fact: Giraffe tongues can be 20 inches long.', 'Fun Fact: Giraffe tongues can be 20 inches long.', 'Fun Fact: Europeans were scared of eating tomatoes when they were introduced.', 'Fun Fact: Humans aren’t the only animals that dream.', 'Fun Fact: The inventor of the microwave appliance only received $2 for his discovery.', 'Fun Fact: The Eiffel Tower can grow more than six inches during the summer.', 'Fun Fact: Sloths have more neck bones than giraffes.', 'Fun Fact: Bees can fly higher than Mount Everest.', 'Fun Fact: Ancient Egyptians used dead mice to ease toothaches.', 'Fun Fact: The Terminator script was sold for $1.', 'Fun Fact: Onions were found in the eyes of an Egyptian mummy.', 'Fun Fact: Abraham Lincoln was a bartender.', 'Fun Fact: Beethoven never knew how to multiply or divide.', 'Fun Fact: Japan released sushi-inspired KitKats.', 'Fun Fact: An espresso maker was sent into space in 2015.', 'Fun Fact: An employee at Pixar accidentally deleted a sequence of Toy Story 2 during production.', 'Fun Fact: The inventor of the tricycle personally delivered two to Queen Victoria.'];
+                    var rnd = Math.floor(Math.random() * messages.length);
+
+                    message.channel.send(messages[rnd]);
+                }
+            } else {
+                message.channel.send("You can't use this command")
+            }
+            break;
 
     }
 });
