@@ -14,6 +14,10 @@ var servers = '2'
 
 var roles = '49'
 
+var Mcommands = '-commands, -info, -fact, -bot, -anthem, -avatar'
+
+var Scommnds = '-mute, -ummute, -kick, -ban, -clear'
+
 client.commands = new Discord.Collection();
 
 client.on('ready', () => {
@@ -203,8 +207,8 @@ client.on('message', message => {
                 const embed = new Discord.MessageEmbed()
                     .setTitle('Bot Commands')
                     .addField('Prefix', PREFIX)
-                    .addField('Member Commands', message.send('-commands, -info, -fact, -bot, -anthem, -avatar'))
-                    .addField('Staff Commands', message.send('-mute, -ummute, -kick, -ban, -clear'))
+                    .addField('Member Commands', Mcommands, true)
+                    .addField('Staff Commands', Scommnds, true)
                     .setColor(0xff0000)
                     message.channel.send(embed);
                 } else {
