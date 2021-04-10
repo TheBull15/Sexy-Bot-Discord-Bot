@@ -207,8 +207,8 @@ client.on('message', message => {
                 const embed = new Discord.MessageEmbed()
                     .setTitle('Bot Commands')
                     .addField('Prefix', PREFIX)
-                    .addField('Member Commands', Mcommands, true)
-                    .addField('Staff Commands', Scommnds, true)
+                    .addField('Member Commands', Mcommands)
+                    .addField('Staff Commands', Scommnds)
                     .setColor(0xff0000)
                     message.channel.send(embed);
                 } else {
