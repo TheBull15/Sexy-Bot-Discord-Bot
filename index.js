@@ -142,7 +142,7 @@ client.on('message', message => {
                 message.channel.send("You can't use this command!")
             }
         case 'kick':
-            if (message.member.roles.cache.has('798965109950120016')) {
+            if (message.member.roles.cache.has('798983712149733397')) {
 
                 const user = message.mentions.users.first();
 
@@ -198,6 +198,19 @@ client.on('message', message => {
                 message.channel.send("You can't use this command")
             }
             break;
+            case 'commands':
+            if (message.member.roles.cache.has('798965111687217192')) {
+                const embed = new Discord.MessageEmbed()
+                    .setTitle('Bot Commands')
+                    .addField('Prefix', PREFIX)
+                    .addField('Member Commands', message.send('-commands, -info, -fact, -bot, -anthem, -avatar'))
+                    .addField('Staff Commands', message.send('-mute, -ummute, -kick, -ban, -clear'))
+                    .setColor(0xff0000)
+                    message.channel.send(embed);
+                } else {
+                    message.channel.send("You can't use this command")
+                }
+                break;
 
     }
 });
