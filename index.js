@@ -87,6 +87,7 @@ client.on('message', message => {
                 const embed = new Discord.MessageEmbed()
                 .setTitle('Anthem')
                 .addField("https://www.youtube.com/watch?v=wyx6JDQCslE")
+                message.channel.send(embed);
             } else {
                 message.channel.send("You can't use this command")
             }
