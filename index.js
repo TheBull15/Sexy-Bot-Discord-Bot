@@ -6,18 +6,6 @@ const PREFIX = '-';
 
 const fs = require('fs');
 
-const createdTimestamp = ('01/13/2021')
-
-const ServerLink = ('https://discord.gg/f93bsZxqY3')
-
-var servers = '2'
-
-var roles = '49'
-
-var Mcommands = '-commands, -info, -fact, -bot, -anthem, -avatar'
-
-var Scommnds = '-mute, -ummute, -kick, -ban, -clear'
-
 client.commands = new Discord.Collection();
 
 client.on('ready', () => {
@@ -45,11 +33,11 @@ client.on('message', message => {
                 const embed = new Discord.MessageEmbed()
                     .setTitle('Server Info')
                     .addField('Server Name', message.guild.name, true)
-                    .addField('Server Created', createdTimestamp, true)
+                    .addField('Server Created', "'01/13/2021'", true)
                     .addField('Server Owner', message.guild.owner, true)
                     .addField('Member Count', message.guild.memberCount, true)
-                    .addField('Total Roles', roles, true)
-                    .addField('Server Link', ServerLink, true)
+                    .addField('Total Roles', "49", true)
+                    .addField('Server Link', "https://discord.gg/f93bsZxqY3", true)
                     .setColor(0xff0000)
                     .setThumbnail(client.user.displayAvatarURL())
                     .setFooter('Stay Sexy!')
@@ -63,7 +51,7 @@ client.on('message', message => {
                 const embed = new Discord.MessageEmbed()
                     .setTitle('Bot Info')
                     .addField('Bot Name', client.user.username, true)
-                    .addField('Servers in', servers, true)
+                    .addField('Servers in', "2", true)
                     .addField('Current Server', message.guild.name, true)
                     .setColor(0xff0000)
                     .setThumbnail(client.user.displayAvatarURL())
@@ -96,7 +84,11 @@ client.on('message', message => {
             break;
         case 'anthem':
             if (message.member.roles.cache.has('798965111687217192')) {
-                message.channel.send("https://www.youtube.com/watch?v=wyx6JDQCslE")
+                const embed = new Discord.MessageEmbed()
+                        .addTitle('Anthem')
+                        .addUrl("https://www.youtube.com/watch?v=wyx6JDQCslE")
+                        .setColor(0xff0000)
+                        .setFooter('Stay Sexy!')
             } else {
                 message.channel.send("You can't use this command")
             }
@@ -104,7 +96,7 @@ client.on('message', message => {
         case 'mute':
             if (message.member.roles.cache.has('798965109950120016')) {
                 let person = message.guild.member(message.mentions.users.first() || message.guild.member(args[1]))
-                if (!person) return message.reply("error, couldn't find that member!");
+                if (!person) return message.repl("error, couldn't find that member!");
 
                 let mainrole = message.guild.roles.cache.find(role => role.name === "Sexy Member");
                 let muterole = message.guild.roles.cache.find(role => role.name === "Muted");
@@ -114,18 +106,30 @@ client.on('message', message => {
                 let time = args[2];
 
                 if (!time) {
-                    return message.reply("error, you didn't specify a time!");
+                    const embed = new Discord.MessageEmbed()
+                        .addTitle('Mute')
+                        .addField("Error, you didn't specify a time!")
+                        .setColor(0xff0000)
+                        .setFooter('Stay Sexy!');
                 }
 
                 person.roles.remove(mainrole.id);
                 person.roles.add(muterole.id);
 
-                message.channel.send(`@${person.user.tag} has now been muted for ${ms(ms(time))}!`);
+                const embed = new Discord.MessageEmbed()
+                .addTitle('Mute')
+                .addField(`@${person.user.tag} has now been muted for ${ms(ms(time))}!`)
+                .setColor(0xff0000)
+                .setFooter('Stay Sexy!');
 
                 setTimeout(function () {
                     person.roles.add(mainrole.id);
                     person.roles.remove(muterole.id);
-                    message.channel.send(`@${person.user.tag} has been unmuted!`)
+                    const embed = new Discord.MessageEmbed()
+                        .addTitle('Mute')
+                        .addField(`@${person.user.tag} has been unmuted!`)
+                        .setColor(0xff0000)
+                        .setFooter('Stay Sexy!')
                 }, ms(time));
             } else {
                 message.channel.send("You can't use this command")
@@ -134,7 +138,11 @@ client.on('message', message => {
         case 'unmute':
             if (message.member.roles.cache.has('798965109950120016')) {
                 let personmuted = message.guild.member(message.mentions.users.first())
-                if (!personmuted) return message.reply("error, member not found!");
+                const embed = new Discord.MessageEmbed()
+                        .addTitle('Umute')
+                        .addField("Error, member not found!")
+                        .setColor(0xff0000)
+                        .setFooter('Stay Sexy!');
 
                 let mainrole1 = message.guild.roles.cache.find(role => role.name === "Sexy Member");
                 let muterole1 = message.guild.roles.cache.find(role => role.name === "Muted");
@@ -142,7 +150,11 @@ client.on('message', message => {
                 personmuted.roles.add(mainrole1.id);
                 personmuted.roles.remove(muterole1.id);
                 message.channel.bulkDelete(1);
-                message.channel.send(`@${personmuted.user.tag} has been unmuted!`)
+                const embed = new Discord.MessageEmbed()
+                        .addTitle('Umute')
+                        .addField(`@${personmuted.user.tag} has been unmuted!`)
+                        .setColor(0xff0000)
+                        .setFooter('Stay Sexy!');
             } else {
                 message.channel.send("You can't use this command!")
             }
@@ -156,16 +168,32 @@ client.on('message', message => {
 
                     if (member) {
                         member.kick('You were bad!').then(() => {
-                            message.channel.send(`@${user.tag} has been kicked!`);
+                            const embed = new Discord.MessageEmbed()
+                        .addTitle('Kick')
+                        .addField(`@${user.tag} has been kicked!`)
+                        .setColor(0xff0000)
+                        .setFooter('Stay Sexy!');
                         }).catch(err => {
-                            message.reply('error, I was unable to kick the memeber!');
+                            const embed = new Discord.MessageEmbed()
+                        .addTitle('Kick')
+                        .addField("Error, I was unable to kick the memeber!")
+                        .setColor(0xff0000)
+                        .setFooter('Stay Sexy!')
                             console.log(err);
                         });
                     } else {
-                        message.reply("error, that user isn't in this guild! ")
+                        const embed = new Discord.MessageEmbed()
+                        .addTitle('Kick')
+                        .addField(`Error, that user isn't in this guild!`)
+                        .setColor(0xff0000)
+                        .setFooter('Stay Sexy!');
                     }
                 } else {
-                    message.reply("error, you need to specify a user!")
+                    const embed = new Discord.MessageEmbed()
+                        .addTitle('Kick')
+                        .addField("Error, you need to specify a user!")
+                        .setColor(0xff0000)
+                        .setFooter('Stay Sexy!')
                 }
             } else {
                 message.channel.send("You can't use this command!")
@@ -180,13 +208,25 @@ client.on('message', message => {
 
                 if (member) {
                     member.ban({ ression: 'You were bad!' }).then(() => {
-                        message.reply(`${user.tag} has been banned!`)
+                        const embed = new Discord.MessageEmbed()
+                        .addTitle('Ban')
+                        .addField(`${user.tag} has been banned!`)
+                        .setColor(0xff0000)
+                        .setFooter('Stay Sexy!')
                     })
                 } else {
-                    message.reply("That user isn't in this guild!")
+                    const embed = new Discord.MessageEmbed()
+                    .addTitle('Ban')
+                    .addField("That user isn't in this guild!")
+                    .setColor(0xff0000)
+                    .setFooter('Stay Sexy!')
                 }
             } else {
-                message.reply('You need specify a person!')
+                const embed = new Discord.MessageEmbed()
+                addTitle('Ban')
+                .addField("You need specify a person!")
+                .setColor(0xff0000)
+                .setFooter('Stay Sexy!')
             }
         } else {
             message.channel.send("You can't use this command!")
