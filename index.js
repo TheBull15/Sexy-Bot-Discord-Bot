@@ -106,7 +106,7 @@ client.on('message', message => {
                 let time = args[2];
 
                 if (!time) {
-                    const embed = new Discord.MessageEmbed()
+                        const embed = new Discord.MessageEmbed()
                         .addTitle('Mute')
                         .addField("Error, you didn't specify a time!")
                         .setColor(0xff0000)
@@ -116,7 +116,7 @@ client.on('message', message => {
                 person.roles.remove(mainrole.id);
                 person.roles.add(muterole.id);
 
-                const embed = new Discord.MessageEmbed()
+                new Discord.MessageEmbed()
                 .addTitle('Mute')
                 .addField(`@${person.user.tag} has now been muted for ${ms(ms(time))}!`)
                 .setColor(0xff0000)
@@ -125,7 +125,7 @@ client.on('message', message => {
                 setTimeout(function () {
                     person.roles.add(mainrole.id);
                     person.roles.remove(muterole.id);
-                    const embed = new Discord.MessageEmbed()
+                    new Discord.MessageEmbed()
                         .addTitle('Mute')
                         .addField(`@${person.user.tag} has been unmuted!`)
                         .setColor(0xff0000)
@@ -150,7 +150,7 @@ client.on('message', message => {
                 personmuted.roles.add(mainrole1.id);
                 personmuted.roles.remove(muterole1.id);
                 message.channel.bulkDelete(1);
-                const embed = new Discord.MessageEmbed()
+                new Discord.MessageEmbed()
                         .addTitle('Umute')
                         .addField(`@${personmuted.user.tag} has been unmuted!`)
                         .setColor(0xff0000)
@@ -174,7 +174,7 @@ client.on('message', message => {
                         .setColor(0xff0000)
                         .setFooter('Stay Sexy!');
                         }).catch(err => {
-                            const embed = new Discord.MessageEmbed()
+                            new Discord.MessageEmbed()
                         .addTitle('Kick')
                         .addField("Error, I was unable to kick the memeber!")
                         .setColor(0xff0000)
@@ -182,14 +182,14 @@ client.on('message', message => {
                             console.log(err);
                         });
                     } else {
-                        const embed = new Discord.MessageEmbed()
+                        new Discord.MessageEmbed()
                         .addTitle('Kick')
                         .addField(`Error, that user isn't in this guild!`)
                         .setColor(0xff0000)
                         .setFooter('Stay Sexy!');
                     }
                 } else {
-                    const embed = new Discord.MessageEmbed()
+                    new Discord.MessageEmbed()
                         .addTitle('Kick')
                         .addField("Error, you need to specify a user!")
                         .setColor(0xff0000)
@@ -215,14 +215,14 @@ client.on('message', message => {
                         .setFooter('Stay Sexy!')
                     })
                 } else {
-                    const embed = new Discord.MessageEmbed()
+                    new Discord.MessageEmbed()
                     .addTitle('Ban')
                     .addField("That user isn't in this guild!")
                     .setColor(0xff0000)
                     .setFooter('Stay Sexy!')
                 }
             } else {
-                const embed = new Discord.MessageEmbed()
+                new Discord.MessageEmbed()
                 addTitle('Ban')
                 .addField("You need specify a person!")
                 .setColor(0xff0000)
