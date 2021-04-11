@@ -33,7 +33,7 @@ client.on('message', message => {
                 const embed = new Discord.MessageEmbed()
                     .setTitle('Server Info')
                     .addField('Server Name', message.guild.name, true)
-                    .addField('Server Created', "'01/13/2021'", true)
+                    .addField('Server Created', "01/13/2021", true)
                     .addField('Server Owner', message.guild.owner, true)
                     .addField('Member Count', message.guild.memberCount, true)
                     .addField('Total Roles', "49", true)
@@ -84,10 +84,7 @@ client.on('message', message => {
             break;
         case 'anthem':
             if (message.member.roles.cache.has('798965111687217192')) {
-                const embed = new Discord.MessageEmbed()
-                .setTitle('Anthem')
-                .addField("https://www.youtube.com/watch?v=wyx6JDQCslE")
-                message.channel.send(embed);
+                message.channel.send("https://www.youtube.com/watch?v=wyx6JDQCslE")
             } else {
                 message.channel.send("You can't use this command")
             }
