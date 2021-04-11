@@ -85,8 +85,8 @@ client.on('message', message => {
         case 'anthem':
             if (message.member.roles.cache.has('798965111687217192')) {
                 const embed = new Discord.MessageEmbed()
-                    .addTitle('Anthem')
-                    .addFeild("https://www.youtube.com/watch?v=wyx6JDQCslE")
+                    .setTitle('Anthem')
+                    .addUrl("https://www.youtube.com/watch?v=wyx6JDQCslE")
                     .setColor(0xff0000)
                     .setFooter('Stay Sexy!')
             } else {
