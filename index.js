@@ -201,36 +201,24 @@ client.on('message', message => {
             break;
         case 'ban':
             if (message.member.roles.cache.has('798983712149733397')) {
-            const user = message.mentions.users.first();
-
-            if (user) {
-                const member = message.guild.member(user);
-
-                if (member) {
-                    member.ban({ ression: 'You were bad!' }).then(() => {
-                        const embed = new Discord.MessageEmbed()
-                        .addTitle('Ban')
-                        .addField(`${user.tag} has been banned!`)
-                        .setColor(0xff0000)
-                        .setFooter('Stay Sexy!')
-                    })
+                const user = message.mentions.users.first();
+        
+                if (user) {
+                    const member = message.guild.member(user);
+        
+                    if (member) {
+                        member.ban({ ression: 'You were bad!' }).then(() => {
+                            message.reply(`${user.tag} has been banned!`)
+                        })
+                    } else {
+                        message.reply("That user isn't in this guild!")
+                    }
                 } else {
-                    new Discord.MessageEmbed()
-                    .addTitle('Ban')
-                    .addField("That user isn't in this guild!")
-                    .setColor(0xff0000)
-                    .setFooter('Stay Sexy!')
+                    message.reply('You need specify a person!')
                 }
             } else {
-                new Discord.MessageEmbed()
-                addTitle('Ban')
-                .addField("You need specify a person!")
-                .setColor(0xff0000)
-                .setFooter('Stay Sexy!')
+                message.channel.send("You can't use this command!")
             }
-        } else {
-            message.channel.send("You can't use this command!")
-        }
             break;
         case 'fact':
             if (message.member.roles.cache.has('798965111687217192')) {
