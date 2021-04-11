@@ -84,7 +84,9 @@ client.on('message', message => {
             break;
         case 'anthem':
             if (message.member.roles.cache.has('798965111687217192')) {
-                message.channel.send("https://www.youtube.com/watch?v=wyx6JDQCslE")
+                const embed = new Discord.MessageEmbed()
+                .setTitle('Anthem')
+                .addField("https://www.youtube.com/watch?v=wyx6JDQCslE")
             } else {
                 message.channel.send("You can't use this command")
             }
