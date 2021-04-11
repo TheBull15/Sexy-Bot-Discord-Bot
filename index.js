@@ -172,7 +172,7 @@ client.on('message', message => {
             }
             break;
         case 'ban':
-
+            if (message.member.roles.cache.has('798983712149733397')) {
             const user = message.mentions.users.first();
 
             if (user) {
@@ -188,6 +188,9 @@ client.on('message', message => {
             } else {
                 message.reply('You need specify a person!')
             }
+        } else {
+            message.channel.send("You can't use this command!")
+        }
             break;
         case 'fact':
             if (message.member.roles.cache.has('798965111687217192')) {
@@ -208,8 +211,8 @@ client.on('message', message => {
                 const embed = new Discord.MessageEmbed()
                     .setTitle('Bot Commands')
                     .addField('Prefix', PREFIX)
-                    .addField('Member Commands', Mcommands)
-                    .addField('Staff Commands', Scommnds)
+                    .addField('Member Commands', "-commands, -info, -fact, -bot, -anthem, -avatar")
+                    .addField('Staff Commands', "-mute, -ummute, -kick, -ban, -clear")
                     .setColor(0xff0000)
                     .setFooter('Stay Sexy!')
                     message.channel.send(embed);
