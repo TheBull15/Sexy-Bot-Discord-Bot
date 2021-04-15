@@ -1,3 +1,5 @@
+const { DiscordAPIError } = require("discord.js");
+
 module.exports = {
     name: 'info',
     description: "This command shows the server info.",
@@ -18,5 +20,6 @@ module.exports = {
         } else {
             message.channel.send("You can't use this command")
         }
+        
     }
 }
