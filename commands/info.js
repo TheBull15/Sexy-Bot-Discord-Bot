@@ -3,7 +3,6 @@ module.exports = {
     description: "This command shows the server info.",
     execute(message, args, Discord) {
         if (message.member.roles.cache.has('798965111687217192')) {
-            const Discord = require('discord.js');
             const newEmbed = new Discord.MessageEmbed()
                 .setTitle('Server Info')
                 .addField('Server Name', message.guild.name, true)
