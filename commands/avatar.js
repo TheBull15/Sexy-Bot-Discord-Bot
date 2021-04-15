@@ -1,7 +1,7 @@
 module.exports = {
     name: 'avatar',
     description: "This command shows the memeber's avatar.",
-    execute(message, args) {
+    execute(message, args, Discord) {
         if (message.member.roles.cache.has('798965111687217192')) {
             let member = message.mentions.users.first() || message.author
             const embed = new Discord.MessageEmbed()
@@ -9,7 +9,7 @@ module.exports = {
                 .setImage(message.author.displayAvatarURL({ size: 4096 }))
                 .setColor(0xff0000)
                 .setFooter('Stay Sexy!')
-            message.channel.send(embed);
+            message.channel.send(newEmbed);
         } else {
             message.channel.send("You can't use this command")
         }

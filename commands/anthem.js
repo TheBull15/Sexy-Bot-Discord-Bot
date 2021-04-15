@@ -1,7 +1,7 @@
 module.exports = {
     name: 'anthem',
     description: "This command plays the anthem of the Sexy Nation.",
-    execute(message, args) {
+    execute(message, args, Discord) {
         if (message.member.roles.cache.has('798965111687217192')) {
             message.channel.send("https://www.youtube.com/watch?v=wyx6JDQCslE")
         } else {

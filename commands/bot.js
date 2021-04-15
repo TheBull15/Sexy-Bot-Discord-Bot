@@ -1,7 +1,7 @@
 module.exports = {
     name: 'bot',
     description: "This command shows the bot info.",
-    execute(message, args) {
+    execute(message, args, Discord) {
         if (message.member.roles.cache.has('798965111687217192')) {
             const embed = new Discord.MessageEmbed()
                 .setTitle('Bot Info')

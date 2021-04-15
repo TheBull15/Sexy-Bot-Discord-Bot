@@ -1,7 +1,7 @@
 module.exports = {
     name: 'unmute',
     description: "This command unmutes members.",
-    execute(message, args) {
+    execute(message, args, Discord) {
         if (message.member.roles.cache.has('798965109950120016')) {
             let personmuted = message.guild.member(message.mentions.users.first())
             if (!personmuted) return message.reply("error, member not found!");

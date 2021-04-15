@@ -1,11 +1,9 @@
-const { DiscordAPIError } = require("discord.js");
-
 module.exports = {
     name: 'info',
     description: "This command shows the server info.",
-    execute(message, args) {
+    execute(message, args, Discord) {
         if (message.member.roles.cache.has('798965111687217192')) {
-            const embed = new Discord.MessageEmbed()
+            const newEmbed = new Discord.MessageEmbed()
                 .setTitle('Server Info')
                 .addField('Server Name', message.guild.name, true)
                 .addField('Server Created', "01/13/2021", true)
@@ -16,7 +14,7 @@ module.exports = {
                 .setColor(0xff0000)
                 .setThumbnail(client.user.displayAvatarURL())
                 .setFooter('Stay Sexy!')
-            message.channel.send(embed);
+                message.channel.send(newEmbed);
         } else {
             message.channel.send("You can't use this command")
         }

@@ -1,7 +1,7 @@
 module.exports = {
     name: 'mute',
     description: "This command mutes users.",
-    execute(message, args) {
+    execute(message, args, Discord) {
         if (message.member.roles.cache.has('798965109950120016')) {
             let person = message.guild.member(message.mentions.users.first() || message.guild.member(args[1]))
             if (!person) return message.reply("error, couldn't find that member!");
