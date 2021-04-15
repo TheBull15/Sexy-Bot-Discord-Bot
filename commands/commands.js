@@ -3,7 +3,7 @@ module.exports = {
     description: "This command shows the bot commands.",
     execute(message, args, Discord) {
         if (message.member.roles.cache.has('798965111687217192')) {
-            const embed = new Discord.MessageEmbed()
+            const newEmbed = new Discord.MessageEmbed()
                 .setTitle('Bot Commands')
                 .addField('Prefix', PREFIX)
                 .addField('Member Commands', "-commands, -info, -fact, -bot, -anthem, -avatar")
