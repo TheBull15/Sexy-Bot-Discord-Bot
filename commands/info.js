@@ -1,3 +1,4 @@
+const client = new Discord.Client();
 module.exports = {
     name: 'info',
     description: "This command shows the server info.",

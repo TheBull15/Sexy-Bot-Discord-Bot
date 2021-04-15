@@ -1,3 +1,4 @@
+const client = new Discord.Client();
 module.exports = {
     name: 'bot',
     description: "This command shows the bot info.",
