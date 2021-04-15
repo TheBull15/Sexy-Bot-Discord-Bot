@@ -27,7 +27,9 @@ client.on('message', message => {
     }
 
 
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
+    let args = message.content.substring(prefix.length).split(" ");
+
+    if (!message.content.startsWith(prefix)) return;
 
     switch (args[0]) {
         case 'info':
