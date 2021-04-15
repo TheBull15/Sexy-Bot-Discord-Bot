@@ -36,27 +36,27 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
 
     if(command === 'anthem'){
-        client.commands.get('anthem').execute(message, args)
+        client.commands.get('anthem').execute(message, args, Discord);
     } else if (command == 'avatar'){
-        client.commands.get('avatar').execute(message, args)
+        client.commands.get('avatar').execute(message, args, Discord);
     } else if (command == 'ban'){ 
-        client.commands.get('ban').execute(message, args)
+        client.commands.get('ban').execute(message, args, Discord);
     }  else if (command == 'bot'){ 
-        client.commands.get('bot').execute(message, args)
+        client.commands.get('bot').execute(message, args, Discord);
     }  else if (command == 'clear'){ 
-        client.commands.get('clear').execute(message, args)
+        client.commands.get('clear').execute(message, args, Discord);
     }  else if (command == 'commands'){ 
-        client.commands.get('commands').execute(message, args)
+        client.commands.get('commands').execute(message, args, Discord);
     }  else if (command == 'fact'){ 
-        client.commands.get('fact').execute(message, args)
+        client.commands.get('fact').execute(message, args, Discord);
     }  else if (command == 'info'){ 
-        client.commands.get('info').execute(message, args)
+        client.commands.get('info').execute(message, args, Discord);
     }  else if (command == 'kick'){ 
-        client.commands.get('kick').execute(message, args)
+        client.commands.get('kick').execute(message, args, Discord);
     }  else if (command == 'mute'){ 
-        client.commands.get('mute').execute(message, args)
+        client.commands.get('mute').execute(message, args, Discord);
     }  else if (command == 'unmute'){ 
-        client.commands.get('unmute').execute(message, args)
+        client.commands.get('unmute').execute(message, args, Discord);
     }
 });
 

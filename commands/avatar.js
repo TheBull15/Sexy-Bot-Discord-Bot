@@ -4,6 +4,7 @@ module.exports = {
     execute(message, args, Discord) {
         if (message.member.roles.cache.has('798965111687217192')) {
             let member = message.mentions.users.first() || message.author
+            const Discord = require('discord.js');
             const newEmbed = new Discord.MessageEmbed()
                 .setTitle(`${member.username}'s avatar`)
                 .setImage(message.author.displayAvatarURL({ size: 4096 }))
