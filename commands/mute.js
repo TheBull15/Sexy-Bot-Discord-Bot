@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'info',
-    description: "This command shows the server info.",
+    name: 'mute',
+    description: "This command mutes users.",
     execute(message, args) {
         if (message.member.roles.cache.has('798965109950120016')) {
             let person = message.guild.member(message.mentions.users.first() || message.guild.member(args[1]))

@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'info',
-    description: "This command shows the server info.",
+    name: 'fact',
+    description: "This command will display a fun fact.",
     execute(message, args) {
         if (message.member.roles.cache.has('798965111687217192')) {
             rndmessage(message);

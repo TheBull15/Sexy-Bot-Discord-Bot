@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'info',
-    description: "This command shows the server info.",
+    name: 'avatar',
+    description: "This command shows the memeber's avatar.",
     execute(message, args) {
         if (message.member.roles.cache.has('798965111687217192')) {
             let member = message.mentions.users.first() || message.author

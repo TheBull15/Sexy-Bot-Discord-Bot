@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'info',
-    description: "This command shows the server info.",
+    name: 'unmute',
+    description: "This command unmutes members.",
     execute(message, args) {
         if (message.member.roles.cache.has('798965109950120016')) {
             let personmuted = message.guild.member(message.mentions.users.first())

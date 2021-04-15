@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'info',
-    description: "This command shows the server info.",
+    name: 'kick',
+    description: "This command kicks members from the server.",
     execute(message, args) {
         if (message.member.roles.cache.has('798983712149733397')) {
 
