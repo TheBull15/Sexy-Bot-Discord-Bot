@@ -133,12 +133,7 @@ client.on('message', message => {
                 personmuted.roles.add(mainrole1.id);
                 personmuted.roles.remove(muterole1.id);
                 message.channel.bulkDelete(1);
-                const embed = new Discord.MessageEmbed()
-                .setTitle('Unmute')
-                .addField(`@${personmuted.user.tag} has been unmuted!`)
-                .setColor(0xff0000)
-                .setFooter('Stay Sexy!')    
-                message.channel.send(embed);          
+                message.channel.send(`@${personmuted.user.tag} has been unmuted!`)
             } else {
                 message.channel.send("You can't use this command!")
             }
