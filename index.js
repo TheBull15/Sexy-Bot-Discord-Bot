@@ -201,7 +201,7 @@ client.on('message', message => {
             if (message.member.roles.cache.has('798965111687217192')) {
                 const embed = new Discord.MessageEmbed()
                     .setTitle('Bot Commands')
-                    .addField('Prefix', PREFIX)
+                    .addField('Prefix', "-")
                     .addField('Member Commands', "-commands, -info, -fact, -bot, -anthem, -avatar")
                     .addField('Staff Commands', "-mute, -ummute, -kick, -ban, -clear")
                     .setColor(0xff0000)
