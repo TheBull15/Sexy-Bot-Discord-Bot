@@ -32,6 +32,12 @@ client.on('message', message => {
     if (!message.content.startsWith(prefix)) return;
 
     switch (args[0]) {
+        case 'win':
+            if (message.member.roles.cache.has('798965111687217192')) {
+                message.channel.send("That was a sexy win!")
+            } else {
+                message.channel.send("You can't use this command")
+            }
         case 'info':
             if (message.member.roles.cache.has('798965111687217192')) {
                 const embed = new Discord.MessageEmbed()
