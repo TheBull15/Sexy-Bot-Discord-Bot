@@ -219,9 +219,13 @@ client.on('message', message => {
             }
             break;
         case 'dm':
+            if (message.member.roles.cache.has('798965111687217192')) {
             client.users.fetch('358275702677569537', false).then((user) => {
                 user.send("Hey, Parlox! Also, don't worry Bull only told me to send this to you once.");
             });
+        } else {
+            message.channel.send("You can't use this command!")
+        }
             break;
 
     }
