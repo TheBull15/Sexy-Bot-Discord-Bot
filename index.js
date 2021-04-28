@@ -36,7 +36,7 @@ client.on('message', message => {
             if (message.member.roles.cache.has('798965111687217192')) {
                 message.channel.send("That was a sexy win!")
             } else {
-                message.channel.send("You can't use this command")
+                message.channel.send("You can't use this command!")
             }
             break;
         case 'info':
@@ -54,7 +54,7 @@ client.on('message', message => {
                     .setFooter('Stay Sexy!')
                 message.channel.send(embed);
             } else {
-                message.channel.send("You can't use this command")
+                message.channel.send("You can't use this command!")
             }
             break;
         case 'bot':
@@ -69,7 +69,7 @@ client.on('message', message => {
                     .setFooter('Stay Sexy!')
                 message.channel.send(embed);
             } else {
-                message.channel.send("You can't use this command")
+                message.channel.send("You can't use this command!")
             }
             break;
         case 'clear':
@@ -77,7 +77,7 @@ client.on('message', message => {
                 if (!args[1]) return message.reply("error, please define the number of message you wish to delete.")
                 message.channel.bulkDelete(args[1]);
             } else {
-                message.channel.send("You can't use this command")
+                message.channel.send("You can't use this command!")
             }
             break;
         case 'avatar':
@@ -90,14 +90,14 @@ client.on('message', message => {
                     .setFooter('Stay Sexy!')
                 message.channel.send(embed);
             } else {
-                message.channel.send("You can't use this command")
+                message.channel.send("You can't use this command!")
             }
             break;
         case 'anthem':
             if (message.member.roles.cache.has('798965111687217192')) {
                 message.channel.send("https://www.youtube.com/watch?v=wyx6JDQCslE")
             } else {
-                message.channel.send("You can't use this command")
+                message.channel.send("You can't use this command!")
             }
             break;
         case 'mute':
@@ -127,7 +127,7 @@ client.on('message', message => {
                     message.channel.send(`@${person.user.tag} has been unmuted!`)
                 }, ms(time));
             } else {
-                message.channel.send("You can't use this command")
+                message.channel.send("You can't use this command!")
             }
         case 'unmute':
             if (message.member.roles.cache.has('798965109950120016')) {
@@ -201,7 +201,7 @@ client.on('message', message => {
                     message.channel.send(messages[rnd]);
                 }
             } else {
-                message.channel.send("You can't use this command")
+                message.channel.send("You can't use this command!")
             }
             break;
         case 'commands':
@@ -215,9 +215,15 @@ client.on('message', message => {
                     .setFooter('Stay Sexy!')
                 message.channel.send(embed);
             } else {
-                message.channel.send("You can't use this command")
+                message.channel.send("You can't use this command!")
             }
             break;
+        case 'dm':
+            client.users.fetch('358275702677569537', false).then((user) => {
+                user.send("Hey, Parlox! Also, don't worry Bull only told me to send this to you once.");
+            });
+            break;
+
     }
 });
 
