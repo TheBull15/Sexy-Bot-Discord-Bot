@@ -6,14 +6,28 @@ const prefix = '-';
 
 const fs = require('fs');
 
-const createdTimestamp = ('01/13/2021')
-
-const ServerLink = ('https://discord.gg/f93bsZxqY3')
-
 client.commands = new Discord.Collection();
 
 client.on('ready', () => {
     console.log('This bot is online!')
+})
+
+const WelcomeChannelID = '801604160641302539'
+const RuleChannelID = '826221944554651688' 
+const TourneyChannelID = '807835906747924530' 
+
+client.on('guildMemberAdd', (member) => {
+    console.log(member)
+
+    const message = `Hey <@${member.id
+        }>, welcome to the Sexy | 3v3! Hope to see you participate in our Tournament. If you have any questions or concerns feel free to ping a staff member. Also, please go check out ${member.guild.channels.cache
+            .get(targetChannelId)
+            .toString()},  and for more information about the tournament go check out ${member.guild.channels.cache
+            .get(targetChannelId1)
+            .toString()}. Thanks for reading, enjoy!`
+
+    const channel = member.guild.channels.cache.get(channelID)
+    channel.send(message)
 })
 
 client.on('message', message => {
@@ -217,15 +231,6 @@ client.on('message', message => {
             } else {
                 message.channel.send("You can't use this command!")
             }
-            break;
-        case 'dm':
-            if (message.member.roles.cache.has('798965111687217192')) {
-            client.users.fetch('358275702677569537', false).then((user) => {
-                user.send("Hey, Parlox! Also, don't worry Bull only told me to send this to you once.");
-            });
-        } else {
-            message.channel.send("You can't use this command!")
-        }
             break;
 
     }
