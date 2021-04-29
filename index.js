@@ -21,12 +21,12 @@ client.on('guildMemberAdd', (member) => {
 
     const message = `Hey <@${member.id
         }>, welcome to the Sexy | 3v3! Hope to see you participate in our Tournament. If you have any questions or concerns feel free to ping a staff member. Also, please go check out ${member.guild.channels.cache
-            .get(targetChannelId)
-            .toString()},  and for more information about the tournament go check out ${member.guild.channels.cache
-            .get(targetChannelId1)
+            .get(RuleChannelID)
+            .toString()}, and for more information about the tournament go check out ${member.guild.channels.cache
+            .get(TourneyChannelID)
             .toString()}. Thanks for reading, enjoy!`
 
-    const channel = member.guild.channels.cache.get(channelID)
+    const channel = member.guild.channels.cache.get(WelcomeChannelID)
     channel.send(message)
 })
 
