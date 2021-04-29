@@ -13,18 +13,20 @@ client.on('ready', () => {
 })
 
 const WelcomeChannelID = '801604160641302539'
-const RuleChannelID = '826221944554651688' 
-const TourneyAnnouncementsID = '807835906747924530' 
+const RuleChannelID = '826221944554651688'
+const TourneyAnnouncementsID = '807835906747924530'
 
 client.on('guildMemberAdd', (member) => {
     console.log(member)
-
+    
+    let NewMember = message.guild.roles.cache.find(role => role.name === "Sexy Member");
+    member.roles.add(NewMember);
     const message = `Hey <@${member.id
         }>, welcome to the Sexy | 3v3! Hope to see you participate in our Tournament. If you have any questions or concerns feel free to ping a staff member. Also, please go check out ${member.guild.channels.cache
             .get(RuleChannelID)
             .toString()}, and for more information about the tournament go check out ${member.guild.channels.cache
-            .get(TourneyAnnouncementsID)
-            .toString()}. Thanks for reading, enjoy!`
+                .get(TourneyAnnouncementsID)
+                .toString()}. Thanks for reading, enjoy!`
 
     const channel = member.guild.channels.cache.get(WelcomeChannelID)
     channel.send(message)
