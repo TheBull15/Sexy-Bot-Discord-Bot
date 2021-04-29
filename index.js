@@ -30,8 +30,6 @@ client.on('guildMemberAdd', (member) => {
     channel.send(message)
 })
 
-const WelcomeChannelID = '801604160641302539'
-
 client.on('guildMemberRemove', (member) => {
     console.log(member)
 
