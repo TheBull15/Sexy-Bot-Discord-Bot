@@ -30,6 +30,17 @@ client.on('guildMemberAdd', (member) => {
     channel.send(message)
 })
 
+const WelcomeChannelID = '801604160641302539'
+
+client.on('guildMemberRemove', (member) => {
+    console.log(member)
+
+    const message = `<@${member.id
+        }>, just left the server. That's a bummer.🙁`
+    const channel = member.guild.channels.cache.get(WelcomeChannelID)
+    channel.send(message)
+})
+
 client.on('message', message => {
 
     if (message.content === "ping") {
