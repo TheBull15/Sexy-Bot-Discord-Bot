@@ -60,8 +60,8 @@ client.on('message', message => {
         const embed = new Discord.MessageEmbed()
                     .setTitle('Sexy Pete')
                     .setImage('https://media.discordapp.net/attachments/843137190058000385/845859033780715580/20210519_160413.jpg?width=506&height=675')
-                    .addField("Pete's Twitch", "[Twitch](https://www.twitch.tv/killpetestrat)", true)
-                    .addField("Pete's YouTube", "[YouTube](https://www.youtube.com/channel/UCm2FjVzc3UDIIC21sHLC4MQ)", true)
+                    .addField("Pete's Twitch", "[Click Here!](https://www.twitch.tv/killpetestrat)", true)
+                    .addField("Pete's YouTube", "[Click Here!](https://www.youtube.com/channel/UCm2FjVzc3UDIIC21sHLC4MQ)", true)
                     .setColor(0xff0000)
                     .setFooter("Stay Sexy!")
                 message.channel.send(embed);
