@@ -28,7 +28,7 @@ client.on('message', message => {
         var rnd = Math.floor(Math.random() * messages.length);
         var GeneralChannel = client.channels.cache.find(channel => channel.id === '959277428025483266');
         GeneralChannel.send(messages[rnd])
-    }, 1000) // Changed to 1s for testing
+    }, 10000) // Changed to 1s for testing
 
     let args = message.content.substring(prefix.length).split(" ");
 
