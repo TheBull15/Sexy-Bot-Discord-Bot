@@ -39,13 +39,13 @@ client.on('message', message => {
             }
             break;
         case 'fact':
-            rndmessage(message);
+            rndmessage(message1);
 
             function rndmessage(message) {
                 var messages1 = ["Jupiter's red spot is getting taller and smaller at the same time.", "The U.S. almost went to war with Canada over a pig.", "You can learn the High Valyrian language from Game of Thrones with an online course.", "The Twitter bird's official name Is Larry.", "America accidentally dropped an atom bomb on South Carolina in 1958.", "The Silverback gorilla can lift almost a literal ton.", "The cast of Friends still earns around $20 million each year.", "One man once survived two atomic bombs.", "You can sneeze faster than a cheetah can run.", 'Some planets produce diamond rain.', "Star Trek's Scotty stormed the beach at Normandy.", 'Napoleon was once attacked by thousands of rabbits.', 'The Australian government banned the word "mate" for a day.', 'The legend of the Loch Ness Monster goes back nearly 1,500 years.', 'Humans are just one of the estimated 8.7 million species on Earth.', 'Dolphins have been trained to be used in wars.', "There's a decorated war hero dog.", "A dozen bodies were once found in Benjamin Franklin's basement.", '"E" is the most common letter and appears in 11 percent of all english words.', 'The unicorn is the national animal of Scotland.', 'The first computer was invented in the 1940s.', 'The English word with the most definitions is "set."', 'Marie Curie is the only person to earn a Nobel prize in two different sciences.', 'Cotton candy was invented by a dentist.', 'You lose up to 30 percent of your taste buds during flight.', 'The wood frog can hold its pee for up to eight months.', 'Humans are the only animals that blush.', 'The moon has moonquakes.', 'Some sea snakes can breathe through their skin.', 'The heads on Easter Island have bodies.', "The world's smallest reptile was first reported in 2021.", 'Hair and nails grow faster during pregnancy.', 'The world wastes about 1 billion metric tons of food each year.', 'The first person convicted of speeding was going eight mph.', 'More human twins are being born now than ever before.', 'Pigeon poop is the property of the British Crown.', 'Humans have jumped further than horses in the Olympics.', 'McDonald’s once made bubblegum-flavored broccoli.', 'The first oranges weren’t orange.', 'There’s only one letter that doesn’t appear in any U.S. state name.', 'A cow-bison hybrid is called a “beefalo”.', 'Scotland has 421 words for “snow”.', 'You are sexy!', 'Samsung tests phone durability with a butt-shaped robot.', 'Peanuts aren’t technically nuts.'];
                 var rnd1 = Math.floor(Math.random() * messages1.length);
 
-                message.channel.send(messages[rnd1]); 
+                message.channel.send(messages1[rnd1]); 
             }
             break;
         case 'sexy-pete':
