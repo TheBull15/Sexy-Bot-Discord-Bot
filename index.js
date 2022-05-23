@@ -19,16 +19,15 @@ client.on('message', message => {
         message.reply("pong!");
     }
 
-    if (message.content === 'Sexy') {
-        message.channel.send("Sexy and I Know It!");
-    }
+    const messages = [`More human twins are being born now than ever before.`, `A narwhal's tusk reveals its past living conditions.`, `The first person convicted of speeding was going eight mph.`, `"New car smell" is the scent of dozens of chemicals.`, `The world wastes about 1 billion metric tons of food each year.`, `The severed head of a sea slug can grow a whole new body.`, `Hair and nails grow faster during pregnancy.`, `The world's smallest reptile was first reported in 2021.`, `Many feet bones don't harden until you're an adult.`, `Some sea snakes can breathe through their skin.`, `The heads on Easter Island have bodies.`, `Goosebumps are meant to ward off predators.`, `There's no such thing as "pear cider."`, `Pineapple works as a natural meat tenderizer.`, `Humans are the only animals that blush.`, `The feeling of getting lost inside a mall is known as the Gruen transfer.`, `The wood frog can hold its pee for up to eight months.`, `The hottest spot on the planet is in Libya.`, `You lose up to 30 percent of your taste buds during flight.`, `Your nostrils work one at a time.`, `Only two mammals like spicy food: humans and the tree shrew.`, `A chef's toque contains 100 folds.`, `Rabbits can't puke.`, `The "M's" in M&Ms stand for "Mars" and "Murrie."`, `The human body literally glows.`, `Copper door knobs are self-disinfecting.`, `Marie Curie is the only person to earn a Nobel prize in two different sciences.`, `Fingernails don't grow after you die.`, `day 3`, `day 2`];
+    var index = 0;
 
-    var messages = ["Jupiter's red spot is getting taller and smaller at the same time.", 'The U.S. almost went to war with Canada over a pig.', 'You can learn the High Valyrian language from Game of Thrones with an online course.', "The Twitter bird's official name Is Larry.", 'America accidentally dropped an atom bomb on South Carolina in 1958.', 'The Silverback gorilla can lift almost a literal ton.', 'The cast of Friends still earns around $20 million each year.', 'One man once survived two atomic bombs.', 'You can sneeze faster than a cheetah can run.', 'Some planets produce diamond rain.', "Star Trek's Scotty stormed the beach at Normandy.", 'Napoleon was once attacked by thousands of rabbits.', 'The Australian government banned the word "mate" for a day.', 'The legend of the Loch Ness Monster goes back nearly 1,500 years.', 'Humans are just one of the estimated 8.7 million species on Earth.', 'Dolphins have been trained to be used in wars.', "There's a decorated war hero dog.", "A dozen bodies were once found in Benjamin Franklin's basement.", '"E" is the most common letter and appears in 11 percent of all english words.', 'The unicorn is the national animal of Scotland.', 'The first computer was invented in the 1940s.', 'The English word with the most definitions is "set."', 'Marie Curie is the only person to earn a Nobel prize in two different sciences.', 'Cotton candy was invented by a dentist.', 'You lose up to 30 percent of your taste buds during flight.', 'The wood frog can hold its pee for up to eight months.', 'Humans are the only animals that blush.', 'The moon has moonquakes.', 'Some sea snakes can breathe through their skin.', 'The heads on Easter Island have bodies.', "The world's smallest reptile was first reported in 2021.", 'Hair and nails grow faster during pregnancy.', 'The world wastes about 1 billion metric tons of food each year.', 'The first person convicted of speeding was going eight mph.', 'More human twins are being born now than ever before.', 'Pigeon poop is the property of the British Crown.', 'Humans have jumped further than horses in the Olympics.', 'McDonald’s once made bubblegum-flavored broccoli.', 'The first oranges weren’t orange.', 'There’s only one letter that doesn’t appear in any U.S. state name.', 'A cow-bison hybrid is called a “beefalo”.', 'Scotland has 421 words for “snow”.', 'Samsung tests phone durability with a butt-shaped robot.', 'Peanuts aren’t technically nuts.', "You're Sexy!"];
-    setInterval(function () {
-        var rnd = Math.floor(Math.random() * messages.length);
-        var GeneralChannel = client.channels.cache.find(channel => channel.id === '959277428025483266');
-        GeneralChannel.send(messages[rnd])
-    }, 86400000) 
+    const channel = client.channels.cache.find(channel => channel.id === '905594922768429077');
+
+    setInterval(() => {
+        channel.send({ content: messages[index] });
+        index = index > messages.length - 2 ? 0 : index + 1;
+    }, 1000 * 60 * 60 * 24); 
 
     let args = message.content.substring(prefix.length).split(" ");
 
@@ -45,19 +44,6 @@ client.on('message', message => {
                 message.channel.send(messages[rnd]);
             }
             break;
-        case 'sexy-pete':
-            const embed = new Discord.MessageEmbed()
-                .setTitle('Sexy Pete')
-                .setImage('https://media.discordapp.net/attachments/843137190058000385/845859033780715580/20210519_160413.jpg?width=506&height=675')
-                .addField("Pete's Twitch", "[Click Here!](https://www.twitch.tv/killpetestrat)", true)
-                .addField("Pete's YouTube", "[Click Here!](https://www.youtube.com/channel/UCm2FjVzc3UDIIC21sHLC4MQ)", true)
-                .setColor(0xff0000)
-                .setFooter("Stay Sexy!")
-            message.channel.send(embed);
-            break;
-        case 'win':
-            message.channel.send("That was a sexy win!")
-            break;
         case 'avatar':
             let member = message.mentions.users.first() || message.author
             const embed1 = new Discord.MessageEmbed()
@@ -66,34 +52,6 @@ client.on('message', message => {
                 .setColor(0xff0000)
                 .setFooter('Stay Risky!')
             message.channel.send(embed1);
-            break;
-        case 'anthem':
-            message.channel.send("https://www.youtube.com/watch?v=wyx6JDQCslE")
-            break;
-        case 'bot':
-            const embed2 = new Discord.MessageEmbed()
-                .setTitle('Bot Info')
-                .addField('Bot Name', client.user.username, true)
-                .addField('Servers in', "1", true)
-                .addField('Current Server', message.guild.name, true)
-                .setColor(0xff0000)
-                .setThumbnail(client.user.displayAvatarURL())
-                .setFooter('Stay Risky!')
-            message.channel.send(embed2);
-            break;
-        case 'info':
-            const embed3 = new Discord.MessageEmbed()
-                .setTitle('Server Info')
-                .addField('Server Name', message.guild.name, true)
-                .addField('Server Created', "31/05/2020", true)
-                .addField('Server Owner', message.guild.owner, true)
-                .addField('Member Count', message.guild.memberCount, true)
-                .addField('Total Roles', "54", true)
-                .addField('Server Link', "https://discord.gg/uDmEbncteS", true)
-                .setColor(0xff0000)
-                .setThumbnail(client.user.displayAvatarURL())
-                .setFooter('Stay Risky!')
-            message.channel.send(embed3);
             break;
         case 'commands':
             const embed4 = new Discord.MessageEmbed()
