@@ -9,8 +9,19 @@ const { generateKey } = require('crypto');
 
 client.commands = new Discord.Collection();
 
+const messages = [`More human twins are being born now than ever before.`, `A narwhal's tusk reveals its past living conditions.`, `The first person convicted of speeding was going eight mph.`, `"New car smell" is the scent of dozens of chemicals.`, `The world wastes about 1 billion metric tons of food each year.`, `The severed head of a sea slug can grow a whole new body.`, `Hair and nails grow faster during pregnancy.`, `The world's smallest reptile was first reported in 2021.`, `Many feet bones don't harden until you're an adult.`, `Some sea snakes can breathe through their skin.`, `The heads on Easter Island have bodies.`, `Goosebumps are meant to ward off predators.`, `There's no such thing as "pear cider."`, `Pineapple works as a natural meat tenderizer.`, `Humans are the only animals that blush.`, `The feeling of getting lost inside a mall is known as the Gruen transfer.`, `The wood frog can hold its pee for up to eight months.`, `The hottest spot on the planet is in Libya.`, `You lose up to 30 percent of your taste buds during flight.`, `Your nostrils work one at a time.`, `Only two mammals like spicy food: humans and the tree shrew.`, `A chef's toque contains 100 folds.`, `Rabbits can't puke.`, `The "M's" in M&Ms stand for "Mars" and "Murrie."`, `The human body literally glows.`, `Copper door knobs are self-disinfecting.`, `Marie Curie is the only person to earn a Nobel prize in two different sciences.`, `Fingernails don't grow after you die.`, `day 3`, `day 2`];
+    var index = 0;
+
 client.on('ready', () => {
     console.log('This bot is online!')
+
+    const channel = client.channels.cache.find(channel => channel.id === '905594922768429077');
+
+    setInterval(() => {
+      channel.send({ content: messages[index] });
+      index = index > messages.length - 2 ? 0 : index + 1;
+    }, 1000 * 60 * 60 * 24); // in milliseconds
+  
 })
 
 client.on('message', message => {
@@ -18,16 +29,6 @@ client.on('message', message => {
     if (message.content === "ping") {
         message.reply("pong!");
     }
-
-    const messages = [`More human twins are being born now than ever before.`, `A narwhal's tusk reveals its past living conditions.`, `The first person convicted of speeding was going eight mph.`, `"New car smell" is the scent of dozens of chemicals.`, `The world wastes about 1 billion metric tons of food each year.`, `The severed head of a sea slug can grow a whole new body.`, `Hair and nails grow faster during pregnancy.`, `The world's smallest reptile was first reported in 2021.`, `Many feet bones don't harden until you're an adult.`, `Some sea snakes can breathe through their skin.`, `The heads on Easter Island have bodies.`, `Goosebumps are meant to ward off predators.`, `There's no such thing as "pear cider."`, `Pineapple works as a natural meat tenderizer.`, `Humans are the only animals that blush.`, `The feeling of getting lost inside a mall is known as the Gruen transfer.`, `The wood frog can hold its pee for up to eight months.`, `The hottest spot on the planet is in Libya.`, `You lose up to 30 percent of your taste buds during flight.`, `Your nostrils work one at a time.`, `Only two mammals like spicy food: humans and the tree shrew.`, `A chef's toque contains 100 folds.`, `Rabbits can't puke.`, `The "M's" in M&Ms stand for "Mars" and "Murrie."`, `The human body literally glows.`, `Copper door knobs are self-disinfecting.`, `Marie Curie is the only person to earn a Nobel prize in two different sciences.`, `Fingernails don't grow after you die.`, `day 3`, `day 2`];
-    var index = 0;
-
-    const channel = client.channels.cache.find(channel => channel.id === '959277428025483266');
-
-    setInterval(() => {
-        channel.send({ content: messages[index] });
-        index = index > messages.length - 2 ? 0 : index + 1;
-    }, 1000 * 60 * 60 * 24); 
 
     let args = message.content.substring(prefix.length).split(" ");
 
