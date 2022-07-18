@@ -15,7 +15,7 @@ const messages = [`More human twins are being born now than ever before.`, `A na
 client.on('ready', () => {
     console.log('This bot is online!')
 
-    const channel = client.channels.cache.find(channel => channel.id === '905594922768429077');
+    const channel = client.channels.cache.find(channel => channel.id === '959277428025483266');
 
     setInterval(() => {
       channel.send({ content: messages[index] });
@@ -58,7 +58,7 @@ client.on('message', message => {
             const embed4 = new Discord.MessageEmbed()
                 .setTitle('Bot Commands')
                 .addField('Prefix', "-")
-                .addField('Commands', "-win, -random-map, -commands, -info, -fact, -bot, -anthem, -avatar, -sexy-pete")
+                .addField('Commands', " -commands, random-map, -avatar")
                 .setColor(0xff0000)
                 .setFooter('Stay Risky!')
             message.channel.send(embed4);
